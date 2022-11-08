@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* centrar en el medio */
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    background: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+}
+
+.stats-container{
+    margin: 20px;
+    border: dotted green;
+    min-width: 200px;
+    height: 100px;
+    position: relative;
+    padding: 20px;
+    white-space: nowrap;
+}
+
+.icon{
+    position: absolute;
+    top: -30px;
+    /* centrados perfectamente */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.counter{
+    font-size: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: green;
+}
+
+.stats-container h4{
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Responsive, cambia de horizontal a vertical dependiendo el dispositivo */
+@media (max-width: 575px) {
+    body{
+        flex-direction: column;
+    }
+}

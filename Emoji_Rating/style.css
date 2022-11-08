@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* centrar los elementos */
+    height: 100vh; /* centrar los elementos verticalmente */
+    align-items: center;
+    background-color: yellow;
+}
+
+.feedback-container{
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,.3);
+    /* el primer 0 es la position de la sombra horizontal
+    el 4 la posición de la sombra vertical, el 8 es el radio
+    del blur. Pero al no querer la parte de abajo negra, utilizo
+    rgba (como 4to valor) para el color de la sombra, el .3 
+    es para un valor alpha que quiere decir 0.3% de opacidad
+    */
+    border-radius: 10px;
+    position: relative; /* para utilizar el position absolute para los emojis */
+}
+
+.emoji-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* esto y lo de arriba es para saber cual es el primero y cual el último */
+    display: flex;
+    overflow: hidden; /* para esconder los emojis */
+}
+
+.far{
+    margin: 1px;
+    transform: translateX(0px); /* para hacer que el primer emoji se muestre */
+    transition: transform .2s;
+}
+
+.rating-container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(50%);
+    bottom: 17%;
+}
+
+.fa-star{
+    color: lightgray;
+    cursor: pointer;
+}
+
+.fa-start.active{
+    color: gold;
+}

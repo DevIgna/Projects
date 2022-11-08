@@ -1,0 +1,78 @@
+body{
+    /* Margin para quitar los margenes de la pag */
+    margin: 0;
+    /* display flex para orientar los elementos horizontalmente */
+    display: flex;
+    /* los botones se me van arriba, por lo que cambiamos el flex direction en column para que estén abajo */
+    flex-direction: column;
+    /* para traer los botones al centro */
+    align-items: center;
+    /* para llevar las imagenes al centro */
+    text-align: center;
+    /* para traer todo al centro usamos el height y justify content */
+    height: 100vh;
+    justify-content: center;
+    /* el fondo */
+    background: #000;
+    /* para esconder el scroll */
+    overflow: hidden;
+    /* ! también se me esconderán los botones, pero es por la superposición, luego los arreglo cuando ordene las imagenes horizontalmente */
+}
+
+.image-container{
+    /* la posición relativa es para que el span sea absoluta */
+    position: relative;
+    width: 200px;
+    height: 200px;
+    /* para efecto 3d en las imagenes */
+    transform-style: preserve-3d;
+    /* el persepctive es para  */
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.7s;
+}
+
+.image-container span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* para cambiar la posición de las imagnees y se vea inclinado */
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+}
+
+.image-container span img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.btn-container{
+    /* porque queremos posicionar los botones tanto a la izquierda como derecha con absolute */
+    position: relative;
+    width: 80%;
+}
+
+.btn{
+    position: absolute;
+    bottom: -80px;
+    background-color: slateblue;
+    color: white;
+    border: none;
+    padding: 10px 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    /* para que el botón brille cuando pase el cursor por encima (hover) */
+    filter: brightness(1.5);
+}
+
+#prev{
+    left: 20%;
+}
+
+#next{
+    right: 20%;
+}
